@@ -3,335 +3,692 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Solar & Electrical | Reliable Solar & Electrical Solutions Kenya</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandGreen: '#114232',
-                        brandYellow: '#F4B400',
-                        lightGrey: '#F6F8FA',
-                        bodyText: '#333333',
-                    }
-                }
-            }
-        }
-    </script>
-
+    <title>MKUSA 2026/2027 - VOTE MULIKITUVA</title>
     <style>
-        body { font-family: 'Outfit', sans-serif; scroll-behavior: smooth; color: #333333; }
-        .glass-nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); border-bottom: 2px solid #e2e8f0; }
-        
-        .logo-img {
-            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
-            transition: transform 0.3s ease;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .nav-box {
-            padding: 10px 18px;
-            border-radius: 14px;
-            background: #114232;
-            color: #ffffff !important;
-            border: 2px solid #F4B400;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            font-size: 0.75rem;
+        body {
+            font-family: 'Montserrat', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a2463 0%, #1e3c72 100%);
+            min-height: 100vh;
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 8px;
-            font-weight: 800;
-            white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(17, 66, 50, 0.2);
-        }
-        
-        .nav-box i { color: #F4B400; font-size: 1rem; }
-        .nav-box:hover { 
-            background: #F4B400; 
-            color: #114232 !important; 
-            transform: translateY(-3px) scale(1.03);
-            border-color: #114232;
-        }
-        
-        .hero-bg { background: radial-gradient(circle at top right, #f7fee7 0%, #ffffff 100%); }
-
-        .btn-yellow {
-            background-color: #F4B400;
-            color: #ffffff;
-            transition: all 0.3s ease;
-        }
-        .btn-yellow:hover {
-            background-color: #d9a000;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -3px rgba(244, 180, 0, 0.4);
+            padding: 20px;
         }
 
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .poster-container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        /* Background Image - Full Display */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('MKU BACKGROUND.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Top Header with Logos on Sides */
+        .top-header {
+            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
             overflow: hidden;
         }
-        .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 30px -10px rgba(17, 66, 50, 0.15);
+
+        .top-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #FFD700, #FF6B35, #00B4D8);
+            z-index: 3;
         }
 
-        .mobile-scroll-menu {
-            display: flex !important; 
-            overflow-x: auto;
-            gap: 10px;
-            padding: 15px;
-            scrollbar-width: none;
+        .left-logo {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
         }
-        .mobile-scroll-menu::-webkit-scrollbar { display: none; }
 
-        .img-float { animation: floating 4s ease-in-out infinite; }
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+        .right-logo {
+            height: 85px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        .header-center {
+            text-align: center;
+            color: white;
+            flex-grow: 1;
+            padding: 0 40px;
+        }
+
+        .mkusa-title {
+            font-size: 3.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .manifesto-subtitle {
+            font-size: 1.6rem;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 1px;
+        }
+
+        /* Main Campaign Content */
+        .campaign-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 650px;
+        }
+
+        /* Left Side: Manifesto */
+        .manifesto-section {
+            padding: 50px 45px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+        }
+
+        .manifesto-header {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .manifesto-header h2 {
+            color: #1a2980;
+            font-size: 3.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .manifesto-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #FF6B35, #26d0ce);
+            border-radius: 3px;
+        }
+
+        .manifesto-list {
+            list-style: none;
+        }
+
+        .manifesto-item {
+            margin-bottom: 28px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            border-left: 5px solid #FF6B35;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.4s ease;
+        }
+
+        .manifesto-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-number {
+            display: inline-block;
+            background: #1a2980;
+            color: white;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            color: #1a2980;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+
+        .item-desc {
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            padding-left: 5px;
+        }
+
+        /* Right Side: Large Candidate Campaign Photo */
+        .candidate-section {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            background: linear-gradient(135deg, #1a2980 0%, #0a2463 100%);
+        }
+
+        .candidate-photo-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .candidate-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(1.05) contrast(1.1);
+        }
+
+        .candidate-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 36, 99, 0.95) 0%, transparent 100%);
+            padding: 40px 30px;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .position-title {
+            color: #FFD700;
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .candidate-name {
+            color: white;
+            font-size: 5.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+            line-height: 1;
+        }
+
+        .campaign-tagline {
+            background: rgba(255, 107, 53, 0.9);
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 800;
+            padding: 20px 40px;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+            border: 4px solid white;
+            position: relative;
+            z-index: 4;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Bottom Section */
+        .bottom-section {
+            background: rgba(10, 36, 99, 0.95);
+            color: white;
+            padding: 35px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bottom-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFD700, #FF6B35, #26d0ce);
+        }
+
+        .campus-info {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #FFD700;
+            text-transform: uppercase;
+        }
+
+        .slogan-container {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hashtags-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .hashtag {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #26d0ce;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hashtag:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(38, 208, 206, 0.3);
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .mkusa-title {
+                font-size: 3rem;
+            }
+            
+            .candidate-name {
+                font-size: 4.5rem;
+            }
+            
+            .campaign-tagline {
+                font-size: 1.8rem;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .campaign-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .left-logo, .right-logo {
+                height: 60px;
+            }
+            
+            .mkusa-title {
+                font-size: 2.5rem;
+            }
+            
+            .candidate-name {
+                font-size: 3.5rem;
+            }
+            
+            .candidate-photo-container {
+                height: 500px;
+            }
+            
+            .manifesto-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .poster-container {
+                border-radius: 10px;
+            }
+            
+            .top-header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .left-logo, .right-logo {
+                height: 50px;
+            }
+            
+            .header-center {
+                padding: 0 20px;
+            }
+            
+            .mkusa-title {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+            
+            .manifesto-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .candidate-name {
+                font-size: 2.8rem;
+                letter-spacing: 2px;
+            }
+            
+            .campaign-tagline {
+                font-size: 1.4rem;
+                padding: 12px 25px;
+            }
+            
+            .manifesto-section {
+                padding: 30px 25px;
+            }
+            
+            .manifesto-header h2 {
+                font-size: 2rem;
+            }
+            
+            .hashtag {
+                font-size: 1.1rem;
+                padding: 10px 20px;
+            }
+            
+            .campus-info {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .candidate-name {
+                font-size: 2.2rem;
+            }
+            
+            .campaign-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .mkusa-title {
+                font-size: 1.8rem;
+            }
+            
+            .manifesto-header h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white">
-
-    <nav class="fixed w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 md:h-24 items-center">
-                <div class="flex items-center gap-3">
-                    <img src="brain1logo.jpeg" alt="Brian Solar Logo" class="h-12 w-auto logo-img md:h-16 rounded object-contain"> 
-                    <div class="flex flex-col">
-                        <span class="text-brandGreen font-black text-xl md:text-2xl tracking-tighter leading-none uppercase">BRIAN SOLAR</span>
-                        <span class="text-[10px] md:text-[12px] text-brandYellow font-bold uppercase tracking-[0.25em]">And Electrical</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="tel:0768463203" class="btn-yellow px-8 py-3.5 rounded-2xl flex items-center gap-2 font-black shadow-lg">
-                        <i class="fa-solid fa-phone-volume animate-pulse"></i> 0768 463 203
-                    </a>
-                </div>
-            </div>
-
-            <div class="mobile-scroll-menu border-t border-slate-50 md:border-none md:flex md:justify-center md:pb-6 md:gap-4">
-                <a href="#home" class="nav-box"><i class="fa-solid fa-house"></i> HOME</a>
-                <a href="#services" class="nav-box"><i class="fa-solid fa-bolt-lightning"></i> SERVICES</a>
-                <a href="#process" class="nav-box"><i class="fa-solid fa-gears"></i> HOW IT WORKS</a>
-                <a href="#projects" class="nav-box"><i class="fa-solid fa-camera"></i> PROJECTS</a>
-                <a href="#service-areas" class="nav-box"><i class="fa-solid fa-map-pin"></i> AREAS</a>
-            </div>
-        </div>
-    </nav>
-
-    <section id="home" class="hero-bg pt-56 pb-24 px-4 min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            <div class="text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-green-100 text-brandGreen font-bold text-xs uppercase tracking-widest mb-8 border border-brandGreen/10">
-                    <span class="flex h-2.5 w-2.5 rounded-full bg-brandYellow animate-ping"></span>
-                    Certified Solar Engineers Kenya
-                </div>
-                <h1 class="text-5xl md:text-7xl font-black text-brandGreen mb-8 leading-[1.1]">
-                    Reliable Solar & <span class="text-brandYellow">Electrical Solutions</span>
-                </h1>
-                <p class="text-lg md:text-xl text-bodyText mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                    Power your future with Kenya's trusted solar experts. We provide high-efficiency installations and electrical safety for homes and businesses.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
-                    <a href="tel:0768463203" class="btn-yellow px-10 py-5 rounded-[2rem] font-black text-lg shadow-2xl flex items-center justify-center gap-3 uppercase">
-                        Get Free Quotation
-                    </a>
-                    <a href="https://wa.me/254768463203" class="bg-white border-4 border-brandGreen text-brandGreen px-10 py-5 rounded-[2rem] font-black text-lg transition flex items-center justify-center gap-3 hover:bg-brandGreen hover:text-white">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i> WhatsApp Us
-                    </a>
-                </div>
-            </div>
-            <div class="relative px-4">
-                <div class="absolute -inset-4 bg-brandGreen/10 rounded-[3rem] rotate-3 blur-sm"></div>
-                <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop" alt="Solar Installation" class="relative rounded-[2.5rem] shadow-2xl border-4 border-white object-cover h-[400px] md:h-[550px] w-full transform hover:scale-[1.01] transition duration-500">
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 px-4 bg-lightGrey">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-brandGreen text-4xl md:text-6xl font-black mb-6 uppercase italic tracking-tighter">Our Core Services</h2>
-                <div class="h-2 w-24 bg-brandYellow mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="service-card bg-white rounded-[2.5rem] shadow-sm border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1542336391-ae2936d8efe4?q=80&w=2070&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Solar Panels">
-                    <div class="p-8">
-                        <h3 class="text-xl font-black mb-4 text-brandGreen leading-tight uppercase">Solar Install</h3>
-                        <p class="text-bodyText text-sm leading-relaxed">High-efficiency panel mounting for residential & commercial properties.</p>
-                    </div>
-                </div>
-
-                <div class="service-card bg-white rounded-[2.5rem] shadow-sm border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Electrical Work">
-                    <div class="p-8">
-                        <h3 class="text-xl font-black mb-4 text-brandGreen leading-tight uppercase">Electrical Eng</h3>
-                        <p class="text-bodyText text-sm leading-relaxed">Professional wiring, troubleshooting, and safety certification.</p>
-                    </div>
-                </div>
-
-                <div class="service-card bg-white rounded-[2.5rem] shadow-sm border border-slate-100">
-                    <img src="https://www.shutterstock.com/shutterstock/photos/1905531460/display_1500/stock-photo-water-pumps-and-solar-panels-groundwater-is-pumped-with-a-submersible-pump-from-clean-energy-or-1905531460.jpg" class="h-48 w-full object-cover" alt="Solar Water Pump">
-                    <div class="p-8">
-                        <h3 class="text-xl font-black mb-4 text-brandGreen leading-tight uppercase">Solar Pumping</h3>
-                        <p class="text-bodyText text-sm leading-relaxed">Advanced borehole solarisation for irrigation and clean water access.</p>
-                    </div>
-                </div>
-
-                <div class="service-card bg-white rounded-[2.5rem] shadow-sm border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Maintenance">
-                    <div class="p-8">
-                        <h3 class="text-xl font-black mb-4 text-brandGreen leading-tight uppercase">Support</h3>
-                        <p class="text-bodyText text-sm leading-relaxed">24/7 emergency repairs and scheduled maintenance contracts.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="process" class="py-24 bg-brandGreen text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <img src="https://www.shutterstock.com/shutterstock/photos/2683883585/display_1500/stock-photo-two-engineers-in-safety-gear-inspecting-solar-panel-array-in-a-field-symbolizing-renewable-energy-2683883585.jpg" alt="Engineer inspecting" class="rounded-[3rem] shadow-2xl border-8 border-white/10 img-float object-cover w-full h-[400px]">
-                    <div class="absolute -bottom-6 -right-6 bg-brandYellow p-8 rounded-3xl text-brandGreen shadow-2xl">
-                        <p class="font-black text-3xl">KE</p>
-                        <p class="font-bold text-sm uppercase">Standard</p>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-5xl font-black mb-12 uppercase italic">How We Work</h2>
-                    <div class="space-y-10">
-                        <div class="flex gap-6">
-                            <span class="text-4xl font-black text-brandYellow">01</span>
-                            <div>
-                                <h4 class="font-bold text-2xl text-brandYellow uppercase">Site Survey</h4>
-                                <p class="text-green-50/70">Physical visit to assess energy needs and roofing condition.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <span class="text-4xl font-black text-brandYellow">02</span>
-                            <div>
-                                <h4 class="font-bold text-2xl text-brandYellow uppercase">System Design</h4>
-                                <p class="text-green-50/70">Custom engineering for maximum sunlight harvest.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <span class="text-4xl font-black text-brandYellow">03</span>
-                            <div>
-                                <h4 class="font-bold text-2xl text-brandYellow uppercase">Swift Setup</h4>
-                                <p class="text-green-50/70">Clean, professional installation in under 48 hours.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="whyus" class="py-24 px-4 bg-white">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-5xl font-black text-brandGreen mb-10 uppercase italic">Why Brian Solar?</h2>
-                <div class="space-y-8">
-                    <div class="flex gap-6 items-start">
-                        <div class="w-12 h-12 bg-brandYellow rounded-full flex items-center justify-center flex-shrink-0 text-brandGreen"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div>
-                            <p class="font-black text-brandGreen text-xl uppercase">5-Year Warranty</p>
-                            <p class="text-bodyText">We stand by our work with long-term performance guarantees.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6 items-start">
-                        <div class="w-12 h-12 bg-brandYellow rounded-full flex items-center justify-center flex-shrink-0 text-brandGreen"><i class="fa-solid fa-clock"></i></div>
-                        <div>
-                            <p class="font-black text-brandGreen text-xl uppercase">Fast Response</p>
-                            <p class="text-bodyText">Rapid dispatch for any electrical or solar emergencies.</p>
-                        </div>
-                    </div>
+<body>
+    <div class="poster-container">
+        <!-- Full Background Image -->
+        <div class="background-image"></div>
+        
+        <div class="content-wrapper">
+            <!-- Top Header with Logos on Sides -->
+            <div class="top-header">
+                <img src="LOGO1.jpeg" alt="Mount Kenya University Logo" class="left-logo">
+                
+                <div class="header-center">
+                    <div class="mkusa-title">MKUSA 2026/2027</div>
+                    <div class="manifesto-subtitle">Official Campaign Manifesto</div>
                 </div>
                 
-                <div id="service-areas" class="mt-16 bg-lightGrey p-10 rounded-[3rem] border-l-8 border-brandYellow">
-                    <h3 class="text-2xl font-black text-brandGreen mb-4 uppercase italic">Service Coverage</h3>
-                    <p class="font-bold text-brandGreen/80 leading-relaxed uppercase tracking-tighter">
-                        Nairobi • Kitui • Machakos • Makueni • Thika • Kiambu • Mombasa
-                    </p>
-                </div>
+                <img src="LOGO2.jpeg" alt="MKUSA Logo" class="right-logo">
             </div>
-            <div class="relative">
-                <img src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2071&auto=format&fit=crop" alt="Solar Battery Bank" class="rounded-[3rem] shadow-2xl border-4 border-lightGrey object-cover w-full h-[450px]">
-            </div>
-        </div>
-    </section>
 
-    <section id="projects" class="py-24 bg-brandGreen">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-center text-white text-4xl font-black uppercase mb-16 italic tracking-tighter">Recent Installations</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="group overflow-hidden rounded-2xl h-80 relative">
-                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" alt="Solar Roof Project">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white font-bold border-2 border-white px-4 py-2">View Project</span>
+            <!-- Main Campaign Content -->
+            <div class="campaign-content">
+                <!-- Left: Manifesto Points -->
+                <div class="manifesto-section">
+                    <div class="manifesto-header">
+                        <h2>OUR MANIFESTO</h2>
+                    </div>
+                    
+                    <ul class="manifesto-list">
+                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.1s forwards">
+                            <div class="item-number">POINT 1</div>
+                            <div class="item-title">Transparent & Accountable Leadership</div>
+                            <div class="item-desc">Open governance with regular financial reports, transparent decision-making, and accessible leadership forums for all students</div>
+                        </li>
+                        
+                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.2s forwards">
+                            <div class="item-number">POINT 2</div>
+                            <div class="item-title">Effective Communication</div>
+                            <div class="item-desc">Weekly student updates, digital platforms for engagement, regular town hall meetings, and transparent information sharing</div>
+                        </li>
+                        
+                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.3s forwards">
+                            <div class="item-number">POINT 3</div>
+                            <div class="item-title">Accessibility to Students</div>
+                            <div class="item-desc">Dedicated office hours, mobile consultation services, 24-hour response system, and open-door policy for all concerns</div>
+                        </li>
+                        
+                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.4s forwards">
+                            <div class="item-number">POINT 4</div>
+                            <div class="item-title">Inclusive Representation</div>
+                            <div class="item-desc">Ensuring every student's voice is heard regardless of background, program, or year of study with equal representation</div>
+                        </li>
+                        
+                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.5s forwards">
+                            <div class="item-number">POINT 5</div>
+                            <div class="item-title">Mental Health Awareness</div>
+                            <div class="item-desc">Counseling services, wellness programs, stress management workshops, and peer support networks for student wellbeing</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right: Large Campaign Photo -->
+                <div class="candidate-section">
+                    <div class="candidate-photo-container">
+                        <img src="STEPHEN MULII.jpeg" alt="STEPHEN MULIKITUVA - Candidate for Secretary General" class="candidate-photo">
+                    </div>
+                    
+                    <div class="candidate-overlay">
+                        <div class="position-title">SECRETARY GENERAL</div>
+                        <h1 class="candidate-name">MULIKITUVA</h1>
+                        <div class="campaign-tagline">LEADERSHIP YOU CAN REACH!</div>
                     </div>
                 </div>
-                <div class="group overflow-hidden rounded-2xl h-80 relative">
-                    <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2070&auto=format&fit=crop" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" alt="Commercial Solar Setup">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white font-bold border-2 border-white px-4 py-2">Commercial Unit</span>
-                    </div>
-                </div>
-                <div class="group overflow-hidden rounded-2xl h-80 relative">
-                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" alt="Large Scale Installation">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white font-bold border-2 border-white px-4 py-2">Off-Grid Farm</span>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
 
-    <footer class="bg-brandGreen text-white pt-24 pb-40 px-4 border-t border-white/10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16 mb-20">
-            <div>
-                <h4 class="text-2xl font-black mb-8 uppercase">Brian Solar</h4>
-                <p class="text-green-100/60 leading-loose mb-8">Professional renewable energy and electrical engineering services across East Africa.</p>
-                <div class="flex gap-4">
-                    <a href="tel:0768463203" class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center hover:bg-brandYellow transition"><i class="fa-solid fa-phone"></i></a>
-                    <a href="https://wa.me/254768463203" class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center hover:bg-brandYellow transition"><i class="fa-brands fa-whatsapp"></i></a>
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <div class="campus-info">MOUNT KENYA UNIVERSITY • PARKLANDS LAW CAMPUS</div>
+                <div class="slogan-container">Service Through Leadership • Unlocking Infinite Possibilities</div>
+                
+                <div class="hashtags-container">
+                    <span class="hashtag">#LeadershipYouCanReach</span>
+                    <span class="hashtag">#MKUSA2026</span>
+                    <span class="hashtag">#VoteMulikituva</span>
+                    <span class="hashtag">#StudentVoiceMatters</span>
+                    <span class="hashtag">#MKUParklands</span>
+                </div>
+                
+                <div class="contact-info">
+                    Official Campaign • mkusa2026@mku.ac.ke • Follow for Updates
                 </div>
             </div>
-            <div>
-                <h4 class="font-black uppercase tracking-widest text-xs mb-10 text-brandYellow">Quick Links</h4>
-                <ul class="space-y-5 font-bold uppercase text-sm">
-                    <li><a href="#home" class="hover:text-brandYellow transition">Home</a></li>
-                    <li><a href="#services" class="hover:text-brandYellow transition">Our Services</a></li>
-                    <li><a href="#projects" class="hover:text-brandYellow transition">Recent Work</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-black uppercase tracking-widest text-xs mb-10 text-brandYellow">Support Line</h4>
-                <p class="text-4xl font-black text-brandYellow mb-4">0768 463 203</p>
-                <p class="text-green-100/50 italic text-sm">Call us now for a free consultation.</p>
-            </div>
         </div>
-        <div class="text-center pt-10 border-t border-white/5 text-[10px] text-white/30 font-black tracking-[0.4em] uppercase">
-            © 2026 Brian Solar & Electrical.
-        </div>
-    </footer>
-
-    <div class="md:hidden fixed bottom-8 left-6 right-6 z-50 flex gap-4">
-        <a href="tel:0768463203" class="flex-1 bg-brandGreen text-white py-5 rounded-[2rem] font-black text-center shadow-2xl flex items-center justify-center gap-3 border-2 border-brandYellow">
-            <i class="fa-solid fa-phone"></i> CALL
-        </a>
-        <a href="https://wa.me/254768463203" class="flex-1 btn-yellow py-5 rounded-[2rem] font-black text-center shadow-2xl flex items-center justify-center gap-3">
-            <i class="fa-brands fa-whatsapp text-xl"></i> WHATSAPP
-        </a>
     </div>
 
+    <script>
+        // Animation for manifesto items on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const manifestoItems = document.querySelectorAll('.manifesto-item');
+            
+            // Initially hide all items
+            manifestoItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-30px)';
+            });
+            
+            // Animate items when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = Array.from(manifestoItems).indexOf(entry.target) * 100 + 300;
+                        setTimeout(() => {
+                            entry.target.style.transition = 'all 0.6s ease';
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateX(0)';
+                        }, delay);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            manifestoItems.forEach(item => observer.observe(item));
+            
+            // Add hover effect to candidate photo
+            const candidatePhoto = document.querySelector('.candidate-photo');
+            if (candidatePhoto) {
+                candidatePhoto.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.03)';
+                    this.style.transition = 'transform 0.5s ease';
+                });
+                
+                candidatePhoto.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            }
+            
+            // Add subtle animation to campaign tagline
+            const tagline = document.querySelector('.campaign-tagline');
+            if (tagline) {
+                tagline.style.animation = 'float 3s ease-in-out infinite';
+            }
+            
+            // Add print functionality
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'p') {
+                    e.preventDefault();
+                    const printMessage = `
+                        ========================================
+                        MKUSA 2026/2027 CAMPAIGN POSTER
+                        ========================================
+                        Candidate: MULIKITUVA for SECRETARY GENERAL
+                        Platform: Leadership You Can Reach!
+                        
+                        For best print quality:
+                        1. Select "Save as PDF"
+                        2. Enable "Background graphics"
+                        3. Set margins to "None"
+                        ========================================
+                    `;
+                    alert(printMessage);
+                    setTimeout(() => {
+                        window.print();
+                    }, 100);
+                }
+            });
+        });
+        
+        // Add CSS for smooth scrolling
+        const style = document.createElement('style');
+        style.textContent = `
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            .poster-container {
+                animation: fadeIn 1s ease-out;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: scale(0.98); }
+                to { opacity: 1; transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Make images load with fallback
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                // Add loading animation
+                img.style.transition = 'opacity 0.5s ease';
+                
+                // If image fails to load, show placeholder
+                img.onerror = function() {
+                    this.style.opacity = '0.5';
+                    this.alt = 'Image failed to load. Please check file path: ' + this.src;
+                };
+                
+                // When image loads successfully
+                img.onload = function() {
+                    this.style.opacity = '1';
+                };
+            });
+        });
+    </script>
 </body>
 </html>
