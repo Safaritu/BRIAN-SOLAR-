@@ -19,20 +19,22 @@
             align-items: center;
             min-height: 100vh;
             padding: 10px;
+            overflow: hidden;
         }
 
-        /* Poster Container */
+        /* Poster Container - Transparent Background */
         .poster {
             width: 100%;
-            max-width: 1080px; /* Optimal for social media */
-            aspect-ratio: 9/16; /* Portrait for status */
-            background: white;
+            max-width: 900px;
+            height: 95vh;
+            max-height: 650px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 10px;
         }
 
-        /* Background Image - Full Visible */
+        /* Background Image - Clear and Visible */
         .background {
             position: absolute;
             top: 0;
@@ -43,20 +45,31 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.15;
+            opacity: 0.3; /* Increased opacity for visibility */
             z-index: 1;
+        }
+
+        /* Overlay to ensure text readability */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85); /* White overlay for readability */
+            z-index: 2;
         }
 
         .content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             height: 100%;
             display: flex;
             flex-direction: column;
             padding: 15px;
         }
 
-        /* Top Section with Logos */
+        /* Top Section - Logos on Both Sides */
         .top-section {
             display: flex;
             justify-content: space-between;
@@ -66,22 +79,15 @@
         }
 
         .logo {
-            height: 50px;
+            height: 60px;
             width: auto;
             object-fit: contain;
-        }
-
-        .logo-left {
-            align-self: flex-start;
-        }
-
-        .logo-right {
-            align-self: flex-end;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .title-section {
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             flex-shrink: 0;
         }
 
@@ -91,43 +97,46 @@
             color: #1a2980;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .sub-title {
             font-size: 1rem;
-            color: #333;
+            color: #1a2980;
             font-weight: 600;
         }
 
-        /* Main Content Grid */
+        /* Main Content - Compressed Grid */
         .main-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             flex: 1;
             min-height: 0;
+            overflow: hidden;
         }
 
-        /* Manifesto Section - No Scroll */
+        /* Manifesto Section - Compressed */
         .manifesto-box {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 15px;
+            border-radius: 8px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 2px solid #1a2980;
         }
 
         .manifesto-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: #1a2980;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             text-align: center;
             text-transform: uppercase;
             border-bottom: 2px solid #FF6B35;
-            padding-bottom: 5px;
+            padding-bottom: 4px;
         }
 
         .manifesto-list {
@@ -135,58 +144,63 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
+            overflow-y: auto;
+            padding-right: 5px;
         }
 
         .manifesto-item {
-            background: rgba(26, 41, 128, 0.05);
-            border-radius: 8px;
-            padding: 10px;
-            border-left: 4px solid #1a2980;
+            background: rgba(26, 41, 128, 0.08);
+            border-radius: 6px;
+            padding: 8px 10px;
+            border-left: 3px solid #1a2980;
         }
 
         .item-title {
             color: #1a2980;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             line-height: 1.2;
         }
 
         .item-desc {
             color: #444;
-            font-size: 0.85rem;
-            line-height: 1.2;
+            font-size: 0.8rem;
+            line-height: 1.1;
         }
 
-        /* Candidate Section - Large Image */
+        /* Candidate Section - LARGE Image */
         .candidate-box {
             background: linear-gradient(135deg, #1a2980 0%, #0a2463 100%);
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 12px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: 2px solid #FFD700;
         }
 
         .photo-frame {
-            width: 220px;
-            height: 220px;
+            width: 240px; /* LARGER */
+            height: 240px; /* LARGER */
             border-radius: 50%;
             border: 5px solid white;
             overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            margin-bottom: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            flex-shrink: 0;
         }
 
         .candidate-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .position-tag {
@@ -203,10 +217,11 @@
             font-size: 2.2rem;
             font-weight: 900;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-align: center;
             line-height: 1;
             letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .slogan {
@@ -214,72 +229,85 @@
             color: white;
             font-size: 1.1rem;
             font-weight: 700;
-            padding: 8px 20px;
+            padding: 6px 18px;
             border-radius: 20px;
             text-align: center;
             border: 2px solid white;
             text-transform: uppercase;
         }
 
-        /* Bottom Section */
+        /* Bottom Section - Compressed */
         .bottom-section {
-            margin-top: 15px;
-            padding: 12px;
+            margin-top: 10px;
+            padding: 10px 12px;
             background: rgba(10, 36, 99, 0.95);
-            border-radius: 8px;
+            border-radius: 6px;
             text-align: center;
             flex-shrink: 0;
+            border: 2px solid #FFD700;
         }
 
         .campus {
             color: #FFD700;
             font-size: 1rem;
             font-weight: 700;
-            margin-bottom: 5px;
-            line-height: 1.2;
+            margin-bottom: 4px;
+            line-height: 1.1;
         }
 
         .motto {
             color: white;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
             opacity: 0.9;
+            line-height: 1.1;
         }
 
         .hashtags {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .hashtag {
             color: #26d0ce;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             background: rgba(255,255,255,0.1);
-            padding: 4px 10px;
-            border-radius: 12px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
         }
 
-        /* Responsive for Mobile */
+        /* Hide scrollbar but keep functionality */
+        .manifesto-list::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .manifesto-list::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .manifesto-list::-webkit-scrollbar-thumb {
+            background: #FF6B35;
+            border-radius: 3px;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .poster {
-                max-width: 500px;
-                aspect-ratio: 4/5; /* Better for mobile */
-            }
-            
-            .main-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
+                max-width: 95vw;
+                max-height: 95vh;
+                height: 95vh;
             }
             
             .top-section {
-                margin-bottom: 5px;
+                margin-bottom: 8px;
             }
             
             .logo {
-                height: 40px;
+                height: 45px;
             }
             
             .main-title {
@@ -290,9 +318,14 @@
                 font-size: 0.9rem;
             }
             
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
             .photo-frame {
-                width: 180px;
-                height: 180px;
+                width: 200px;
+                height: 200px;
             }
             
             .candidate-name {
@@ -304,43 +337,69 @@
             }
             
             .slogan {
-                font-size: 1rem;
-                padding: 6px 15px;
+                font-size: 0.95rem;
+                padding: 5px 15px;
             }
             
             .manifesto-title {
                 font-size: 1.2rem;
             }
             
+            .manifesto-box, .candidate-box {
+                padding: 10px;
+            }
+            
+            .manifesto-item {
+                padding: 6px 8px;
+            }
+            
             .item-title {
-                font-size: 0.95rem;
+                font-size: 0.9rem;
             }
             
             .item-desc {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .bottom-section {
+                padding: 8px 10px;
             }
             
             .campus {
                 font-size: 0.9rem;
             }
+            
+            .motto {
+                font-size: 0.8rem;
+            }
+            
+            .hashtag {
+                font-size: 0.7rem;
+                padding: 2px 6px;
+            }
         }
 
         @media (max-width: 480px) {
             .poster {
-                max-width: 350px;
+                max-height: 98vh;
+                height: 98vh;
             }
             
             .logo {
-                height: 35px;
+                height: 40px;
             }
             
             .main-title {
                 font-size: 1.4rem;
             }
             
+            .sub-title {
+                font-size: 0.8rem;
+            }
+            
             .photo-frame {
-                width: 150px;
-                height: 150px;
+                width: 170px;
+                height: 170px;
                 border-width: 4px;
             }
             
@@ -348,45 +407,51 @@
                 font-size: 1.5rem;
             }
             
-            .slogan {
+            .position-tag {
                 font-size: 0.9rem;
-                padding: 5px 12px;
             }
             
-            .manifesto-item {
-                padding: 8px;
+            .slogan {
+                font-size: 0.85rem;
+                padding: 4px 12px;
             }
             
-            .campus {
-                font-size: 0.8rem;
+            .manifesto-title {
+                font-size: 1.1rem;
+            }
+            
+            .item-title {
+                font-size: 0.85rem;
+            }
+            
+            .hashtags {
+                gap: 4px;
             }
             
             .hashtag {
-                font-size: 0.75rem;
-                padding: 3px 8px;
+                font-size: 0.65rem;
             }
         }
 
-        /* Prevent any scrolling */
+        /* Prevent scrolling on body */
         body {
-            overflow: hidden;
-        }
-        
-        .poster {
             overflow: hidden;
         }
     </style>
 </head>
 <body>
     <div class="poster">
-        <!-- Background Image - Now properly applied -->
+        <!-- Background Image - Now clearly visible -->
         <div class="background"></div>
+        
+        <!-- White overlay for readability -->
+        <div class="overlay"></div>
         
         <div class="content">
             <!-- Top Section with Logos on Both Sides -->
             <div class="top-section">
-                <img src="LOGO1.jpeg" alt="MKU Logo" class="logo logo-left">
-                <img src="LOGO2.jpeg" alt="MKUSA Logo" class="logo logo-right">
+                <img src="LOGO1.jpeg" alt="MKU Logo" class="logo">
+                <img src="LOGO2.jpeg" alt="MKUSA Logo" class="logo">
             </div>
             
             <!-- Title Section -->
@@ -424,7 +489,7 @@
                     </ul>
                 </div>
                 
-                <!-- Right: Large Candidate Image -->
+                <!-- Right: LARGE Candidate Image -->
                 <div class="candidate-box">
                     <div class="photo-frame">
                         <img src="STEPHEN MULII.jpeg" alt="MULIKITUVA" class="candidate-img">
@@ -450,117 +515,122 @@
     </div>
 
     <script>
-        // Image loading with fallback
+        // Enhanced image loading with debugging
         document.addEventListener('DOMContentLoaded', function() {
-            console.log("Loading campaign poster...");
+            console.log("=== POSTER LOADING ===");
             
-            // Check all images
-            const images = [
-                { selector: '.background', url: 'MKU BACKGROUND.jpeg', type: 'background' },
-                { selector: '.logo-left', url: 'LOGO1.jpeg', type: 'logo' },
-                { selector: '.logo-right', url: 'LOGO2.jpeg', type: 'logo' },
-                { selector: '.candidate-img', url: 'STEPHEN MULII.jpeg', type: 'candidate' }
+            // Test each image file
+            const testImages = [
+                { name: 'Background', url: 'MKU BACKGROUND.jpeg', element: '.background' },
+                { name: 'Left Logo', url: 'LOGO1.jpeg', element: '.top-section img:first-child' },
+                { name: 'Right Logo', url: 'LOGO2.jpeg', element: '.top-section img:last-child' },
+                { name: 'Candidate Photo', url: 'STEPHEN MULII.jpeg', element: '.candidate-img' }
             ];
             
-            images.forEach(imgInfo => {
-                const imgElement = document.querySelector(imgInfo.selector);
-                if (imgElement) {
-                    if (imgInfo.type === 'background') {
-                        // Check background image
-                        const bgImg = new Image();
-                        bgImg.onload = function() {
-                            console.log("✓ Background image loaded");
-                            document.querySelector('.background').style.opacity = '0.15';
-                        };
-                        bgImg.onerror = function() {
-                            console.error("✗ Background image failed");
-                            document.querySelector('.background').style.background = 'linear-gradient(135deg, rgba(10,36,99,0.1) 0%, rgba(28,58,113,0.1) 100%)';
-                        };
-                        bgImg.src = imgInfo.url;
-                    } else {
-                        // Check regular images
-                        imgElement.onload = function() {
-                            console.log("✓ Image loaded:", imgInfo.type);
-                            this.style.opacity = '1';
-                        };
-                        imgElement.onerror = function() {
-                            console.error("✗ Image failed:", imgInfo.url);
-                            this.style.opacity = '0.8';
-                            this.style.filter = 'grayscale(100%)';
-                            
-                            // Add placeholder text
-                            if (imgInfo.type === 'candidate') {
-                                this.alt = 'Candidate Photo';
-                                this.parentElement.innerHTML = `
-                                    <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#1a2980;color:white;font-size:1.5rem;font-weight:bold;">
-                                        MULIKITUVA
-                                    </div>
-                                `;
-                            }
-                        };
+            testImages.forEach((img, index) => {
+                const testImg = new Image();
+                testImg.onload = function() {
+                    console.log(`✓ ${img.name} loaded successfully`);
+                    
+                    // Special handling for background
+                    if (img.name === 'Background') {
+                        document.querySelector(img.element).style.opacity = '0.3';
+                        document.querySelector(img.element).style.backgroundImage = `url('${img.url}')`;
                     }
-                }
+                };
+                testImg.onerror = function() {
+                    console.error(`✗ ${img.name} FAILED: ${img.url}`);
+                    
+                    // Apply fallbacks
+                    if (img.name === 'Background') {
+                        document.querySelector(img.element).style.background = 
+                            'linear-gradient(135deg, #1a2980 0%, #26d0ce 100%)';
+                        document.querySelector(img.element).style.opacity = '0.2';
+                    } else if (img.name === 'Candidate Photo') {
+                        const frame = document.querySelector('.photo-frame');
+                        frame.innerHTML = `
+                            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a2980,#0a2463);color:white;font-size:2rem;font-weight:bold;text-align:center;padding:10px;">
+                                MULIKITUVA
+                            </div>
+                        `;
+                    }
+                };
+                testImg.src = img.url;
             });
             
-            // Set perfect dimensions for social media
-            function setSocialMediaSize() {
+            // Adjust layout based on screen size
+            function adjustLayout() {
                 const poster = document.querySelector('.poster');
                 const isMobile = window.innerWidth <= 768;
                 
                 if (isMobile) {
-                    // For mobile screens
-                    poster.style.maxWidth = '95vw';
-                    poster.style.aspectRatio = '4/5';
+                    // Mobile: taller aspect ratio
+                    poster.style.maxHeight = '95vh';
+                    poster.style.height = '95vh';
+                    
+                    // Ensure logos are visible
+                    document.querySelectorAll('.logo').forEach(logo => {
+                        logo.style.height = '40px';
+                    });
                 } else {
-                    // For desktop/social media
-                    poster.style.maxWidth = '1080px';
-                    poster.style.aspectRatio = '9/16';
+                    // Desktop: fixed size
+                    poster.style.maxHeight = '650px';
+                    poster.style.height = '95vh';
                 }
+                
+                // Ensure no overflow
+                document.body.style.overflow = 'hidden';
             }
             
-            setSocialMediaSize();
-            window.addEventListener('resize', setSocialMediaSize);
+            adjustLayout();
+            window.addEventListener('resize', adjustLayout);
             
-            // Add simple animation
+            // Simple animations for elements
             setTimeout(() => {
-                document.querySelectorAll('.manifesto-item').forEach((item, index) => {
+                // Animate manifesto items
+                document.querySelectorAll('.manifesto-item').forEach((item, i) => {
                     setTimeout(() => {
                         item.style.transform = 'translateX(0)';
                         item.style.opacity = '1';
-                    }, index * 100);
+                    }, i * 100);
                 });
                 
                 // Animate candidate section
                 const candidateBox = document.querySelector('.candidate-box');
                 if (candidateBox) {
-                    setTimeout(() => {
-                        candidateBox.style.transform = 'scale(1)';
-                        candidateBox.style.opacity = '1';
-                    }, 500);
+                    candidateBox.style.transform = 'scale(1)';
+                    candidateBox.style.opacity = '1';
                 }
             }, 300);
             
-            // Prevent any scrolling
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
+            // Instructions for sharing
+            console.log("\n=== HOW TO SHARE ===");
+            console.log("1. Take screenshot (Ctrl+Shift+S on Chrome)");
+            console.log("2. Save as PDF (Ctrl+P → Save as PDF)");
+            console.log("3. Share on WhatsApp/Facebook!");
             
-            // For social media sharing - create image version
-            console.log("Poster ready for sharing!");
-            console.log("Save as image: Use browser screenshot or print as PDF");
+            // Capture shortcut
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 's') {
+                    e.preventDefault();
+                    alert("📸 Take Screenshot:\n\n1. Press Ctrl+Shift+S (Chrome)\n2. Select the poster area\n3. Save and share!\n\nOr use Print (Ctrl+P) → Save as PDF");
+                }
+            });
         });
         
-        // Function to capture as image (for sharing)
-        function capturePoster() {
-            alert("To share this poster:\n1. Take a screenshot\n2. Or use browser's 'Save as PDF'\n3. Share on WhatsApp/Facebook!");
-        }
+        // Force no scrolling
+        window.addEventListener('scroll', function(e) {
+            window.scrollTo(0, 0);
+        });
         
-        // Quick access to capture
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 's' && e.ctrlKey) {
-                e.preventDefault();
-                capturePoster();
+        // Prevent touch scrolling on mobile
+        document.addEventListener('touchmove', function(e) {
+            if (e.target.closest('.manifesto-list')) {
+                // Allow scrolling only in manifesto list
+                return;
             }
-        });
+            e.preventDefault();
+        }, { passive: false });
     </script>
 </body>
 </html>
