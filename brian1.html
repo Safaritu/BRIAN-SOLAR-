@@ -12,682 +12,548 @@
         }
 
         body {
-            font-family: 'Montserrat', 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #0a2463 0%, #1e3c72 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
+            overflow: hidden;
         }
 
-        .poster-container {
+        .flyer {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px;
+            height: 90vh;
+            max-height: 700px;
             background: white;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
             position: relative;
-        }
-
-        /* Background Image - Full Display */
-        .background-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('MKU BACKGROUND.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.15;
-            z-index: 1;
-        }
-
-        .content-wrapper {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Top Header with Logos on Sides */
-        .top-header {
-            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
-            padding: 25px 40px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+            flex-direction: column;
         }
 
-        .top-header::before {
+        /* Background with subtle pattern */
+        .flyer::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #FFD700, #FF6B35, #00B4D8);
-            z-index: 3;
+            bottom: 0;
+            background-image: url('MKU BACKGROUND.jpeg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08;
+            z-index: 1;
         }
 
-        .left-logo {
-            height: 90px;
+        .content {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Header - Simple */
+        .header {
+            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #FFD700;
+        }
+
+        .logo {
+            height: 60px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
         }
 
-        .right-logo {
-            height: 85px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
-        }
-
-        .header-center {
+        .title-box {
             text-align: center;
             color: white;
-            flex-grow: 1;
-            padding: 0 40px;
+            flex: 1;
+            padding: 0 20px;
         }
 
-        .mkusa-title {
-            font-size: 3.8rem;
+        .title {
+            font-size: 2.2rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
         }
 
-        .manifesto-subtitle {
-            font-size: 1.6rem;
-            font-weight: 600;
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 500;
             opacity: 0.95;
-            letter-spacing: 1px;
         }
 
-        /* Main Campaign Content */
-        .campaign-content {
+        /* Main Content - Grid */
+        .main-content {
+            flex: 1;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 650px;
+            overflow: hidden;
         }
 
-        /* Left Side: Manifesto */
-        .manifesto-section {
-            padding: 50px 45px;
+        /* Left Column: Manifesto */
+        .manifesto {
+            padding: 25px 30px;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
-        .manifesto-header {
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .manifesto-header h2 {
+        .manifesto h2 {
             color: #1a2980;
-            font-size: 3.2rem;
+            font-size: 1.8rem;
             font-weight: 900;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FF6B35;
             text-transform: uppercase;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
         }
 
-        .manifesto-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(90deg, #FF6B35, #26d0ce);
-            border-radius: 3px;
-        }
-
-        .manifesto-list {
+        .manifesto-points {
             list-style: none;
+            flex: 1;
         }
 
-        .manifesto-item {
-            margin-bottom: 28px;
-            padding: 15px 20px;
+        .point {
+            margin-bottom: 18px;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            border-left: 5px solid #FF6B35;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: all 0.4s ease;
+            border-radius: 8px;
+            border-left: 4px solid #1a2980;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .manifesto-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .item-number {
+        .point-number {
             display: inline-block;
             background: #1a2980;
             color: white;
             font-weight: 700;
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-
-        .item-title {
-            color: #1a2980;
-            font-size: 1.5rem;
-            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.9rem;
             margin-bottom: 8px;
+        }
+
+        .point-title {
+            color: #1a2980;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
             line-height: 1.3;
-            text-transform: uppercase;
         }
 
-        .item-desc {
+        .point-desc {
             color: #444;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            padding-left: 5px;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
 
-        /* Right Side: Large Candidate Campaign Photo */
-        .candidate-section {
-            position: relative;
-            overflow: hidden;
+        /* Right Column: Candidate */
+        .candidate {
+            background: linear-gradient(135deg, #1a2980 0%, #0a2463 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 0;
-            background: linear-gradient(135deg, #1a2980 0%, #0a2463 100%);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .candidate-photo-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            z-index: 2;
+        .photo-container {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid white;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .candidate-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-            filter: brightness(1.05) contrast(1.1);
         }
 
-        .candidate-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(10, 36, 99, 0.95) 0%, transparent 100%);
-            padding: 40px 30px;
-            z-index: 3;
-            text-align: center;
-        }
-
-        .position-title {
+        .position {
             color: #FFD700;
-            font-size: 2.2rem;
-            font-weight: 900;
+            font-size: 1.4rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+            text-align: center;
         }
 
         .candidate-name {
             color: white;
-            font-size: 5.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 25px;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 1px;
             line-height: 1;
         }
 
-        .campaign-tagline {
+        .tagline {
             background: rgba(255, 107, 53, 0.9);
             color: white;
-            font-size: 2.2rem;
-            font-weight: 800;
-            padding: 20px 40px;
-            border-radius: 50px;
-            display: inline-block;
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
-            border: 4px solid white;
-            position: relative;
-            z-index: 4;
-            margin-top: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Bottom Section */
-        .bottom-section {
-            background: rgba(10, 36, 99, 0.95);
-            color: white;
-            padding: 35px 40px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 25px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bottom-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #FFD700, #FF6B35, #26d0ce);
-        }
-
-        .campus-info {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #FFD700;
+            border: 3px solid white;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .slogan-container {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            opacity: 0.95;
-            font-weight: 400;
+        /* Footer */
+        .footer {
+            background: #0a2463;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-top: 3px solid #FFD700;
         }
 
-        .hashtags-container {
+        .campus {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+
+        .slogan {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .hashtags {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 15px;
             flex-wrap: wrap;
-            margin-top: 25px;
         }
 
         .hashtag {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 1.3rem;
-            font-weight: 700;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
             color: #26d0ce;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .hashtag:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(38, 208, 206, 0.3);
-        }
-
-        .contact-info {
-            margin-top: 25px;
-            font-size: 1.1rem;
-            opacity: 0.85;
-            font-weight: 300;
-        }
-
-        /* Animations */
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
         }
 
         /* Responsive Design */
-        @media (max-width: 1100px) {
-            .mkusa-title {
-                font-size: 3rem;
-            }
-            
-            .candidate-name {
-                font-size: 4.5rem;
-            }
-            
-            .campaign-tagline {
-                font-size: 1.8rem;
-                padding: 15px 30px;
-            }
-        }
-
         @media (max-width: 900px) {
-            .campaign-content {
+            .flyer {
+                height: 95vh;
+                max-height: 95vh;
+            }
+            
+            .main-content {
                 grid-template-columns: 1fr;
+                overflow-y: auto;
             }
             
-            .left-logo, .right-logo {
-                height: 60px;
+            .manifesto {
+                max-height: 45vh;
             }
             
-            .mkusa-title {
-                font-size: 2.5rem;
+            .candidate {
+                padding: 30px 20px;
             }
             
-            .candidate-name {
-                font-size: 3.5rem;
+            .photo-container {
+                width: 180px;
+                height: 180px;
             }
             
-            .candidate-photo-container {
-                height: 500px;
-            }
-            
-            .manifesto-header h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .poster-container {
-                border-radius: 10px;
-            }
-            
-            .top-header {
-                flex-direction: column;
-                gap: 20px;
-                padding: 20px;
-            }
-            
-            .left-logo, .right-logo {
-                height: 50px;
-            }
-            
-            .header-center {
-                padding: 0 20px;
-            }
-            
-            .mkusa-title {
-                font-size: 2rem;
-                letter-spacing: 1px;
-            }
-            
-            .manifesto-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .candidate-name {
-                font-size: 2.8rem;
-                letter-spacing: 2px;
-            }
-            
-            .campaign-tagline {
-                font-size: 1.4rem;
-                padding: 12px 25px;
-            }
-            
-            .manifesto-section {
-                padding: 30px 25px;
-            }
-            
-            .manifesto-header h2 {
-                font-size: 2rem;
-            }
-            
-            .hashtag {
-                font-size: 1.1rem;
-                padding: 10px 20px;
-            }
-            
-            .campus-info {
-                font-size: 1.4rem;
-            }
-        }
-
-        @media (max-width: 400px) {
             .candidate-name {
                 font-size: 2.2rem;
             }
             
-            .campaign-tagline {
+            .tagline {
+                font-size: 1.2rem;
+                padding: 10px 25px;
+            }
+            
+            .title {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+            
+            .title-box {
+                padding: 0;
+            }
+            
+            .title {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .logo {
+                height: 45px;
+            }
+            
+            .manifesto {
+                padding: 20px;
+            }
+            
+            .manifesto h2 {
+                font-size: 1.5rem;
+            }
+            
+            .point-title {
+                font-size: 1.1rem;
+            }
+            
+            .candidate-name {
+                font-size: 1.8rem;
+            }
+            
+            .position {
                 font-size: 1.2rem;
             }
             
-            .mkusa-title {
-                font-size: 1.8rem;
+            .photo-container {
+                width: 150px;
+                height: 150px;
             }
             
-            .manifesto-header h2 {
-                font-size: 1.8rem;
+            .campus {
+                font-size: 1.1rem;
+            }
+            
+            .hashtags {
+                gap: 10px;
+            }
+            
+            .hashtag {
+                font-size: 0.8rem;
+                padding: 5px 12px;
             }
         }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 5px;
+            }
+            
+            .flyer {
+                height: 98vh;
+                border-radius: 8px;
+            }
+            
+            .candidate-name {
+                font-size: 1.6rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+            
+            .point {
+                padding: 12px;
+            }
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .manifesto::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .manifesto::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .manifesto::-webkit-scrollbar-thumb {
+            background: #FF6B35;
+            border-radius: 2px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="poster-container">
-        <!-- Full Background Image -->
-        <div class="background-image"></div>
-        
-        <div class="content-wrapper">
-            <!-- Top Header with Logos on Sides -->
-            <div class="top-header">
-                <img src="LOGO1.jpeg" alt="Mount Kenya University Logo" class="left-logo">
-                
-                <div class="header-center">
-                    <div class="mkusa-title">MKUSA 2026/2027</div>
-                    <div class="manifesto-subtitle">Official Campaign Manifesto</div>
+    <div class="flyer">
+        <div class="content">
+            <!-- Header with Logos -->
+            <div class="header">
+                <img src="LOGO1.jpeg" alt="MKU Logo" class="logo">
+                <div class="title-box">
+                    <div class="title">MKUSA 2026/2027</div>
+                    <div class="subtitle">Official Campaign Manifesto</div>
                 </div>
-                
-                <img src="LOGO2.jpeg" alt="MKUSA Logo" class="right-logo">
+                <img src="LOGO2.jpeg" alt="MKUSA Logo" class="logo">
             </div>
 
-            <!-- Main Campaign Content -->
-            <div class="campaign-content">
-                <!-- Left: Manifesto Points -->
-                <div class="manifesto-section">
-                    <div class="manifesto-header">
-                        <h2>OUR MANIFESTO</h2>
-                    </div>
-                    
-                    <ul class="manifesto-list">
-                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.1s forwards">
-                            <div class="item-number">POINT 1</div>
-                            <div class="item-title">Transparent & Accountable Leadership</div>
-                            <div class="item-desc">Open governance with regular financial reports, transparent decision-making, and accessible leadership forums for all students</div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Left: Manifesto -->
+                <div class="manifesto">
+                    <h2>OUR MANIFESTO</h2>
+                    <ul class="manifesto-points">
+                        <li class="point animate">
+                            <div class="point-number">POINT 1</div>
+                            <div class="point-title">Transparent & Accountable Leadership</div>
+                            <div class="point-desc">Open governance, financial reports, and accessible leadership forums</div>
                         </li>
-                        
-                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.2s forwards">
-                            <div class="item-number">POINT 2</div>
-                            <div class="item-title">Effective Communication</div>
-                            <div class="item-desc">Weekly student updates, digital platforms for engagement, regular town hall meetings, and transparent information sharing</div>
+                        <li class="point animate" style="animation-delay: 0.1s">
+                            <div class="point-number">POINT 2</div>
+                            <div class="point-title">Effective Communication</div>
+                            <div class="point-desc">Weekly updates, digital platforms, and regular town hall meetings</div>
                         </li>
-                        
-                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.3s forwards">
-                            <div class="item-number">POINT 3</div>
-                            <div class="item-title">Accessibility to Students</div>
-                            <div class="item-desc">Dedicated office hours, mobile consultation services, 24-hour response system, and open-door policy for all concerns</div>
+                        <li class="point animate" style="animation-delay: 0.2s">
+                            <div class="point-number">POINT 3</div>
+                            <div class="point-title">Accessibility to Students</div>
+                            <div class="point-desc">Dedicated office hours and 24-hour response system</div>
                         </li>
-                        
-                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.4s forwards">
-                            <div class="item-number">POINT 4</div>
-                            <div class="item-title">Inclusive Representation</div>
-                            <div class="item-desc">Ensuring every student's voice is heard regardless of background, program, or year of study with equal representation</div>
+                        <li class="point animate" style="animation-delay: 0.3s">
+                            <div class="point-number">POINT 4</div>
+                            <div class="point-title">Inclusive Representation</div>
+                            <div class="point-desc">Every student's voice heard with equal representation</div>
                         </li>
-                        
-                        <li class="manifesto-item" style="animation: slideIn 0.6s ease 0.5s forwards">
-                            <div class="item-number">POINT 5</div>
-                            <div class="item-title">Mental Health Awareness</div>
-                            <div class="item-desc">Counseling services, wellness programs, stress management workshops, and peer support networks for student wellbeing</div>
+                        <li class="point animate" style="animation-delay: 0.4s">
+                            <div class="point-number">POINT 5</div>
+                            <div class="point-title">Mental Health Awareness</div>
+                            <div class="point-desc">Counseling services, wellness programs, and peer support</div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Right: Large Campaign Photo -->
-                <div class="candidate-section">
-                    <div class="candidate-photo-container">
-                        <img src="STEPHEN MULII.jpeg" alt="STEPHEN MULIKITUVA - Candidate for Secretary General" class="candidate-photo">
+                <!-- Right: Candidate -->
+                <div class="candidate">
+                    <div class="photo-container">
+                        <img src="STEPHEN MULII.jpeg" alt="STEPHEN MULIKITUVA" class="candidate-photo">
                     </div>
-                    
-                    <div class="candidate-overlay">
-                        <div class="position-title">SECRETARY GENERAL</div>
-                        <h1 class="candidate-name">MULIKITUVA</h1>
-                        <div class="campaign-tagline">LEADERSHIP YOU CAN REACH!</div>
-                    </div>
+                    <div class="position">SECRETARY GENERAL</div>
+                    <div class="candidate-name">MULIKITUVA</div>
+                    <div class="tagline">LEADERSHIP YOU CAN REACH!</div>
                 </div>
             </div>
 
-            <!-- Bottom Section -->
-            <div class="bottom-section">
-                <div class="campus-info">MOUNT KENYA UNIVERSITY • PARKLANDS LAW CAMPUS</div>
-                <div class="slogan-container">Service Through Leadership • Unlocking Infinite Possibilities</div>
-                
-                <div class="hashtags-container">
+            <!-- Footer -->
+            <div class="footer">
+                <div class="campus">MOUNT KENYA UNIVERSITY • PARKLANDS LAW CAMPUS</div>
+                <div class="slogan">Service Through Leadership • Unlocking Infinite Possibilities</div>
+                <div class="hashtags">
                     <span class="hashtag">#LeadershipYouCanReach</span>
                     <span class="hashtag">#MKUSA2026</span>
                     <span class="hashtag">#VoteMulikituva</span>
-                    <span class="hashtag">#StudentVoiceMatters</span>
                     <span class="hashtag">#MKUParklands</span>
-                </div>
-                
-                <div class="contact-info">
-                    Official Campaign • mkusa2026@mku.ac.ke • Follow for Updates
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Animation for manifesto items on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const manifestoItems = document.querySelectorAll('.manifesto-item');
-            
-            // Initially hide all items
-            manifestoItems.forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateX(-30px)';
-            });
-            
-            // Animate items when they come into view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const delay = Array.from(manifestoItems).indexOf(entry.target) * 100 + 300;
-                        setTimeout(() => {
-                            entry.target.style.transition = 'all 0.6s ease';
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateX(0)';
-                        }, delay);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            manifestoItems.forEach(item => observer.observe(item));
-            
-            // Add hover effect to candidate photo
-            const candidatePhoto = document.querySelector('.candidate-photo');
-            if (candidatePhoto) {
-                candidatePhoto.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.03)';
-                    this.style.transition = 'transform 0.5s ease';
-                });
-                
-                candidatePhoto.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            }
-            
-            // Add subtle animation to campaign tagline
-            const tagline = document.querySelector('.campaign-tagline');
-            if (tagline) {
-                tagline.style.animation = 'float 3s ease-in-out infinite';
-            }
-            
-            // Add print functionality
-            document.addEventListener('keydown', function(e) {
-                if (e.ctrlKey && e.key === 'p') {
-                    e.preventDefault();
-                    const printMessage = `
-                        ========================================
-                        MKUSA 2026/2027 CAMPAIGN POSTER
-                        ========================================
-                        Candidate: MULIKITUVA for SECRETARY GENERAL
-                        Platform: Leadership You Can Reach!
-                        
-                        For best print quality:
-                        1. Select "Save as PDF"
-                        2. Enable "Background graphics"
-                        3. Set margins to "None"
-                        ========================================
-                    `;
-                    alert(printMessage);
-                    setTimeout(() => {
-                        window.print();
-                    }, 100);
-                }
-            });
-        });
-        
-        // Add CSS for smooth scrolling
-        const style = document.createElement('style');
-        style.textContent = `
-            html {
-                scroll-behavior: smooth;
-            }
-            
-            .poster-container {
-                animation: fadeIn 1s ease-out;
-            }
-            
-            @keyframes fadeIn {
-                from { opacity: 0; transform: scale(0.98); }
-                to { opacity: 1; transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Make images load with fallback
+        // Simple image loading handler
         window.addEventListener('load', function() {
             const images = document.querySelectorAll('img');
             images.forEach(img => {
-                // Add loading animation
-                img.style.transition = 'opacity 0.5s ease';
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.3s ease';
                 
-                // If image fails to load, show placeholder
-                img.onerror = function() {
-                    this.style.opacity = '0.5';
-                    this.alt = 'Image failed to load. Please check file path: ' + this.src;
-                };
-                
-                // When image loads successfully
                 img.onload = function() {
                     this.style.opacity = '1';
                 };
+                
+                img.onerror = function() {
+                    console.log('Image failed to load:', this.src);
+                    this.style.opacity = '0.8';
+                    this.style.filter = 'grayscale(100%)';
+                };
             });
+            
+            // Trigger image loading
+            images.forEach(img => {
+                if (img.complete) {
+                    img.style.opacity = '1';
+                }
+            });
+            
+            // Add slight delay to animations
+            setTimeout(() => {
+                document.querySelectorAll('.animate').forEach((el, index) => {
+                    el.style.animationDelay = (index * 0.1) + 's';
+                });
+            }, 100);
+        });
+
+        // Adjust flyer height on mobile
+        function adjustFlyerHeight() {
+            const flyer = document.querySelector('.flyer');
+            const vh = window.innerHeight;
+            
+            if (vh < 700) {
+                flyer.style.height = '95vh';
+                flyer.style.maxHeight = '95vh';
+            } else {
+                flyer.style.height = '90vh';
+                flyer.style.maxHeight = '700px';
+            }
+        }
+
+        // Initial adjustment
+        adjustFlyerHeight();
+        
+        // Adjust on resize
+        window.addEventListener('resize', adjustFlyerHeight);
+
+        // Simple print functionality
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                alert('For best print quality, select "Save as PDF" with background graphics enabled.');
+                setTimeout(() => window.print(), 100);
+            }
         });
     </script>
 </body>
