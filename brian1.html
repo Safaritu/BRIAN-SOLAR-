@@ -18,14 +18,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh; /* NO SCROLL */
 }
 
 /* ================= POSTER ================= */
 .poster {
   width: 100%;
   max-width: 420px;
-  height: 100vh; /* FORCE FIT SCREEN */
+  height: 100vh; /* FIT SCREEN */
   background: #f4f6f8;
   border-radius: 18px;
   overflow: hidden;
@@ -37,7 +37,7 @@ body {
 /* ================= HERO ================= */
 .hero {
   position: relative;
-  height: 170px;
+  height: 160px;
   background: url("MKU BACKGROUND.jpeg") center / cover no-repeat;
 }
 
@@ -45,7 +45,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.65));
 }
 
 /* ================= LOGOS ================= */
@@ -54,9 +54,9 @@ body {
   top: 10px;
   left: 0;
   right: 0;
+  padding: 0 14px;
   display: flex;
   justify-content: space-between;
-  padding: 0 16px;
   z-index: 2;
 }
 
@@ -78,7 +78,6 @@ body {
   font-weight: 900;
   letter-spacing: 1.2px;
   z-index: 2;
-  text-transform: uppercase;
 }
 
 .title span {
@@ -86,30 +85,33 @@ body {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
-  margin-top: 2px;
   color: #ffdede;
 }
 
-/* ================= MAIN CONTENT ================= */
+/* ================= CONTENT ================= */
 .content {
   flex: 1;
-  display: flex;
   padding: 14px;
+  display: flex;
   gap: 14px;
+  align-items: stretch;
 }
 
 /* ================= MANIFESTO ================= */
 .manifesto {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .manifesto h3 {
   color: #8b0000;
   font-size: 15px;
   font-weight: 900;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  border-left: 6px solid #8b0000;
   padding-left: 10px;
-  border-left: 5px solid #8b0000;
   text-transform: uppercase;
 }
 
@@ -120,18 +122,18 @@ body {
 .manifesto li {
   background: #ffffff;
   margin-bottom: 8px;
-  padding: 8px 10px;
+  padding: 9px 11px;
   border-radius: 10px;
   font-size: 12.5px;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   align-items: flex-start;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .manifesto li span {
-  min-width: 22px;
-  height: 22px;
+  min-width: 24px;
+  height: 24px;
   background: #8b0000;
   color: #fff;
   border-radius: 50%;
@@ -157,34 +159,33 @@ body {
   background: #fff;
   padding: 6px;
   border-radius: 16px;
-  box-shadow: 0 16px 30px rgba(0,0,0,0.35);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.35);
 }
 
 /* ================= VOTE ================= */
 .vote {
   text-align: center;
-  padding: 12px 8px;
+  padding: 10px;
   background: #ffffff;
-  border-top: 1px solid #ddd;
 }
 
 .vote-text {
   color: #8b0000;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .vote h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 900;
   margin: 4px 0;
 }
 
 .hashtag {
   font-size: 12px;
-  color: #555;
   font-weight: 600;
+  color: #444;
 }
 
 /* ================= POSITION ================= */
@@ -193,27 +194,24 @@ body {
   color: #fff;
   text-align: center;
   padding: 14px;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 900;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 /* ================= MOBILE FIX ================= */
 @media (max-width: 420px) {
-
   .content {
     flex-direction: column;
+    justify-content: space-between;
   }
 
-  /* IMAGE FIRST */
   .candidate {
-    order: 1;
+    order: 1; /* IMAGE FIRST */
   }
 
-  /* MANIFESTO BELOW IMAGE */
   .manifesto {
-    order: 2;
+    order: 2; /* MANIFESTO BELOW IMAGE */
   }
 
   .candidate img {
@@ -248,7 +246,7 @@ body {
         <li><span>1</span> Transparent & accountable leadership</li>
         <li><span>2</span> Effective communication</li>
         <li><span>3</span> Accessibility to students</li>
-        <li><span>4</span> Inclusive representation & student voice</li>
+        <li><span>4</span> Inclusive representation</li>
         <li><span>5</span> Mental health awareness</li>
       </ul>
     </div>
